@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <script defer src="./js/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
+    <title>GB Burger - Kézműves Burgerek és Üdítők</title>
+
+</head>
+<body>
+    <section id="fooldal"></section>
+    <header class="navbar">
+        <div class="container row align-center">
+            <div class="col-3 logo-container">
+                <a href="#" class="logo">
+                    GB<br><span>BURGER</span>
+                </a>
+            </div>
+            
+            <nav class="col-6 nav-links">
+                <a href="#fooldal">Főoldal</a>
+                <a href="#helyszinek">Helyszínek</a>
+                <a href="#etlap">Étlap</a>
+            </nav>
+            
+            <div class="col-3 nav-actions">
+                <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menü nyitása">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#helyszinek">Helyszínek</a>
+        <a href="#etlap">Étlap</a>
+    </div>
+
+    
+
+    <section class="hero-section">
+        <div class="container row align-center">
+            
+            <div class="col-6 hero-text">
+                <h1 class="hero-title">
+                    SZAFTOS<br>
+                    BURGEREK &<br>
+                    HŰSÍTŐK
+                </h1>
+                <a href="#etlap" class="btn btn-primary hero-btn">RÉSZLETEK</a>
+            </div>
+
+            <div class="col-6 hero-visual">
+                <div class="hero-bg-circle"></div>
+                
+                <div class="hero-combo-display">
+                    <div class="drink-can">
+                        <div class="can-top"></div>
+                        <div class="can-label">
+                            <span>GB</span>
+                            <small>COLD DRINK</small>
+                        </div>
+                    </div>
+
+                    <div class="burger-mockup">
+                        <div class="bun-top"></div>
+                        <div class="cheese"></div>
+                        <div class="patty"></div>
+                        <div class="bun-bottom"></div>
+                    </div>
+                </div>
+
+                <div class="badge-green">
+                    <span>100% MARHA<br>HÚSBÓL</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="etlap" class="menu-section">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="menu-category-title">Hamburgerek</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-badge">Klasszikus</div>
+                        <h3 class="card-title">GB Classic Burger</h3>
+                        <p class="card-desc">100% marhahúspogácsa, házi GB szósz, cheddar sajt, paradicsom, csemegeuborka és jégsaláta.</p>
+                        <div class="card-footer">
+                            <span class="card-price">3 490 Ft</span>
+                            <button class="btn btn-primary btn-sm add-to-cart">Rendelés</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-badge badge-red">Népszerű</div>
+                        <h3 class="card-title">GB Cheese & Bacon</h3>
+                        <p class="card-desc">Dupla marhahúspogácsa, dupla cheddar sajt, ropogós pirított bacon, karamellizált hagyma és BBQ szósz.</p>
+                        <div class="card-footer">
+                            <span class="card-price">3 890 Ft</span>
+                            <button class="btn btn-primary btn-sm add-to-cart">Rendelés</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-badge">Séf ajánlata</div>
+                        <h3 class="card-title">GB Smash Burger</h3>
+                        <p class="card-desc">Friss dupla smash marhahús, kézműves fűszeres lekvár, érett cheddar sajt, jalapeno és GB titkos szósz.</p>
+                        <div class="card-footer">
+                            <span class="card-price">3 990 Ft</span>
+                            <button class="btn btn-primary btn-sm add-to-cart">Rendelés</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row menu-spacer">
+                <div class="col-12">
+                    <h2 class="menu-category-title">Üdítők</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <div class="card card-drink">
+                        <h3 class="card-title">Coca-Cola Classic</h3>
+                        <p class="card-desc">330 ml-es dobozos hűsítő üdítőital a klasszikus ízek kedvelőinek.</p>
+                        <div class="card-footer">
+                            <span class="card-price">890 Ft</span>
+                            <button class="btn btn-outline btn-sm add-to-cart">Hozzáadás</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="card card-drink">
+                        <h3 class="card-title">Coca-Cola Zero</h3>
+                        <p class="card-desc">330 ml-es cukormentes dobozos üdítőital a maximális frissességért.</p>
+                        <div class="card-footer">
+                            <span class="card-price">890 Ft</span>
+                            <button class="btn btn-outline btn-sm add-to-cart">Hozzáadás</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="card card-drink">
+                        <h3 class="card-title">Házi Citromos Limonádé</h3>
+                        <p class="card-desc">500 ml-es frissen facsart citromból készült hűsítő ital mentával.</p>
+                        <div class="card-footer">
+                            <span class="card-price">1 190 Ft</span>
+                            <button class="btn btn-outline btn-sm add-to-cart">Hozzáadás</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
