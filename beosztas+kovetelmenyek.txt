@@ -1,0 +1,20 @@
+sjon
+Foglalható elemeket tartalmazó fájlű
+Előre hozzáadott foglalási időpontok
+-Portfólió weboldal
+Egy, a foglalás témájával kapcsolat bemutatkozó weboldal készít
+Keresés/szűrés a foglalások között,ése
+Foglalások egyedi megjelenítése: kártyás, szintén JavaScriptben jöjjön létre.
+Pszeudo-törlés lehetőség mind a táblázatos mind a kártyás nézetben (a helyi beolvasott
+adatból törölje a foglalást. Törlés típusa: „soft delete”.
+Zsrebo:
+index.html
+index.js
+kozos.js
+index.css
+asztalok.json
+Botka:
+foglalasok.js
+foglalasok.html
+foglalasok.json
+protfolio.html
