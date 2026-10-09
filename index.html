@@ -13,29 +13,22 @@
 </head>
 <body>
     <section id="fooldal"></section>
-    <header class="navbar">
-        <div class="container row align-center">
-            <div class="col-3 logo-container">
-                <a href="#" class="logo">
-                    GB<br><span>BURGER</span>
-                </a>
-            </div>
-            
-            <nav class="col-6 nav-links">
-                <a href="#fooldal">Főoldal</a>
-                <a href="#helyszinek">Helyszínek</a>
-                <a href="#etlap">Étlap</a>
-            </nav>
-            
-            <div class="col-3 nav-actions">
-                <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menü nyitása">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">GB Burger</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Menü">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Főoldal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Rólunk</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="foglalasok.html">Foglalások</a></li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
     <div class="mobile-menu" id="mobileMenu">
         <a href="#helyszinek">Helyszínek</a>
