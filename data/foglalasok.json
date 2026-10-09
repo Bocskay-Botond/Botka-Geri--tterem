@@ -1,0 +1,20 @@
+[
+    { "id": 1,  "nev": "Kovács Anna",      "email": "kovacs.anna@gmail.com",     "telefon": "+36 30 123 4567", "datum": "2026-10-10", "idopont": "18:00", "vendegszam": 2, "asztalId": 1, "vegosszeg": 3000,  "torolt": false },
+    { "id": 2,  "nev": "Nagy Péter",       "email": "nagy.peter@freemail.hu",    "telefon": "+36 20 234 5678", "datum": "2026-10-10", "idopont": "18:00", "vendegszam": 4, "asztalId": 3, "vegosszeg": 6000,  "torolt": false },
+    { "id": 3,  "nev": "Szabó Eszter",     "email": "szabo.eszter@gmail.com",    "telefon": "06 70 345 6789",  "datum": "2026-10-10", "idopont": "20:00", "vendegszam": 6, "asztalId": 6, "vegosszeg": 9000,  "torolt": false },
+    { "id": 4,  "nev": "Tóth Gábor",       "email": "toth.gabor@citromail.hu",   "telefon": "+36 30 456 7890", "datum": "2026-10-11", "idopont": "12:00", "vendegszam": 3, "asztalId": 4, "vegosszeg": 4500,  "torolt": false },
+    { "id": 5,  "nev": "Horváth Lilla",    "email": "horvath.lilla@gmail.com",   "telefon": "+36 20 567 8901", "datum": "2026-10-11", "idopont": "14:00", "vendegszam": 2, "asztalId": 2, "vegosszeg": 3000,  "torolt": false },
+    { "id": 6,  "nev": "Varga Bence",      "email": "varga.bence@outlook.com",   "telefon": "06 30 678 9012",  "datum": "2026-10-11", "idopont": "18:00", "vendegszam": 8, "asztalId": 8, "vegosszeg": 12000, "torolt": false },
+    { "id": 7,  "nev": "Kiss Dóra",        "email": "kiss.dora@gmail.com",       "telefon": "+36 70 789 0123", "datum": "2026-10-13", "idopont": "16:00", "vendegszam": 5, "asztalId": 7, "vegosszeg": 7500,  "torolt": false },
+    { "id": 8,  "nev": "Molnár Ádám",      "email": "molnar.adam@freemail.hu",   "telefon": "+36 30 890 1234", "datum": "2026-10-13", "idopont": "20:00", "vendegszam": 4, "asztalId": 5, "vegosszeg": 6000,  "torolt": false },
+    { "id": 9,  "nev": "Németh Réka",      "email": "nemeth.reka@gmail.com",     "telefon": "06 20 901 2345",  "datum": "2026-10-14", "idopont": "12:00", "vendegszam": 1, "asztalId": 1, "vegosszeg": 1500,  "torolt": false },
+    { "id": 10, "nev": "Farkas Máté",      "email": "farkas.mate@citromail.hu",  "telefon": "+36 30 012 3456", "datum": "2026-10-15", "idopont": "18:00", "vendegszam": 6, "asztalId": 7, "vegosszeg": 9000,  "torolt": false },
+    { "id": 11, "nev": "Balogh Zsófia",    "email": "balogh.zsofia@gmail.com",   "telefon": "+36 20 111 2233", "datum": "2026-10-16", "idopont": "20:00", "vendegszam": 2, "asztalId": 2, "vegosszeg": 3000,  "torolt": false },
+    { "id": 12, "nev": "Papp Dániel",      "email": "papp.daniel@outlook.com",   "telefon": "06 70 222 3344",  "datum": "2026-10-17", "idopont": "14:00", "vendegszam": 3, "asztalId": 3, "vegosszeg": 4500,  "torolt": true  },
+    { "id": 13, "nev": "Takács Nóra",      "email": "takacs.nora@gmail.com",     "telefon": "+36 30 333 4455", "datum": "2026-10-17", "idopont": "18:00", "vendegszam": 7, "asztalId": 8, "vegosszeg": 10500, "torolt": false },
+    { "id": 14, "nev": "Juhász Levente",   "email": "juhasz.levente@freemail.hu","telefon": "+36 20 444 5566", "datum": "2026-10-18", "idopont": "12:00", "vendegszam": 4, "asztalId": 4, "vegosszeg": 6000,  "torolt": false },
+    { "id": 15, "nev": "Lakatos Petra",    "email": "lakatos.petra@gmail.com",   "telefon": "06 30 555 6677",  "datum": "2026-10-18", "idopont": "16:00", "vendegszam": 2, "asztalId": 1, "vegosszeg": 3000,  "torolt": false },
+    { "id": 16, "nev": "Mészáros Bálint",  "email": "meszaros.balint@gmail.com", "telefon": "+36 70 666 7788", "datum": "2026-10-20", "idopont": "20:00", "vendegszam": 5, "asztalId": 6, "vegosszeg": 7500,  "torolt": false },
+    { "id": 17, "nev": "Simon Kata",       "email": "simon.kata@outlook.com",    "telefon": "+36 30 777 8899", "datum": "2026-10-21", "idopont": "18:00", "vendegszam": 3, "asztalId": 5, "vegosszeg": 4500,  "torolt": false },
+    { "id": 18, "nev": "Fekete Olivér",    "email": "fekete.oliver@citromail.hu","telefon": "06 20 888 9900",  "datum": "2026-10-24", "idopont": "14:00", "vendegszam": 2, "asztalId": 2, "vegosszeg": 3000,  "torolt": false }
+]

@@ -1,0 +1,39 @@
+/* Saját stílusok a Foglalások és a Portfólió oldalhoz.
+   A Bootstrap UTÁN töltődik be, így amit itt írunk, az felülírja. */
+
+body {
+    font-family: "Montserrat", system-ui, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Kártyák: egérrel fölé víve kicsit megemelkednek */
+.foglalas-kartya,
+.etel-kartya {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.foglalas-kartya:hover,
+.etel-kartya:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Portfólió – nyitó blokk */
+.portfolio-hero {
+    background: linear-gradient(135deg, #212529 0%, #3b2a1a 100%);
+    color: #fff;
+    padding: 5rem 0;
+}
+
+.portfolio-hero h1 {
+    font-weight: 900;
+    letter-spacing: 0.02em;
+}
+
+/* Vissza a tetejére gomb helye. A megjelenítését (görgetésre) Geri kozos.js-e kezeli. */
+#felGomb {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 1000;
+}

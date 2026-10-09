@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rólunk – GB Burger</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/foglalasok.css">
+
+    <script src="./js/kozos.js" defer></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">GB Burger</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Menü">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Főoldal</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="portfolio.html">Rólunk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="foglalasok.html">Foglalások</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Nyitó blokk -->
+    <header class="portfolio-hero text-center">
+        <div class="container">
+            <h1 class="display-4">A GB Burger története</h1>
+            <p class="lead mt-3 mb-4">Kézműves burgerek, friss alapanyagok, baráti hangulat – 2019 óta.</p>
+            <a href="#etlap" class="btn btn-warning btn-lg">Étlap</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Rólunk -->
+        <section id="rolunk" class="container py-5">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-3">Rólunk</h2>
+                    <p>
+                        A GB Burger két barát ötletéből született: olyan helyet akartunk, ahol a burger
+                        nem gyorskaja, hanem gondosan elkészített étel. A húspogácsákat minden reggel
+                        mi daráljuk 100% magyar marhahúsból, a buci a szomszéd pékségből érkezik.
+                    </p>
+                    <p>
+                        Ma már 40 fős vendégtérrel, terasszal és családias hangulattal várunk mindenkit –
+                        legyen szó gyors ebédről, baráti vacsoráról vagy születésnapi összejövetelről.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Számok röviden -->
+                    <div class="row row-cols-2 g-3 text-center">
+                        <div class="col"><div class="p-4 bg-white rounded shadow-sm"><div class="fs-2 fw-bold">2019</div><div>óta nyitva</div></div></div>
+                        <div class="col"><div class="p-4 bg-white rounded shadow-sm"><div class="fs-2 fw-bold">8</div><div>asztal</div></div></div>
+                        <div class="col"><div class="p-4 bg-white rounded shadow-sm"><div class="fs-2 fw-bold">40</div><div>férőhely</div></div></div>
+                        <div class="col"><div class="p-4 bg-white rounded shadow-sm"><div class="fs-2 fw-bold">100%</div><div>marhahús</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Étlap -->
+        <section id="etlap" class="bg-white py-5">
+            <div class="container">
+                <h2 class="fw-bold mb-4">Étlap</h2>
+
+                <h3 class="h4 mb-3">Hamburgerek</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+                    <div class="col">
+                        <div class="card h-100 etel-kartya">
+                            <div class="card-body">
+                                <span class="badge text-bg-secondary mb-2">Klasszikus</span>
+                                <h4 class="card-title h5">GB Classic Burger</h4>
+                                <p class="card-text">100% marhahúspogácsa, házi GB szósz, cheddar sajt, paradicsom, csemegeuborka és jégsaláta.</p>
+                            </div>
+                            <div class="card-footer fw-bold">3 490 Ft</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 etel-kartya">
+                            <div class="card-body">
+                                <span class="badge text-bg-danger mb-2">Népszerű</span>
+                                <h4 class="card-title h5">GB Cheese &amp; Bacon</h4>
+                                <p class="card-text">Dupla marhahúspogácsa, dupla cheddar sajt, ropogós bacon, karamellizált hagyma és BBQ szósz.</p>
+                            </div>
+                            <div class="card-footer fw-bold">3 890 Ft</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 etel-kartya">
+                            <div class="card-body">
+                                <span class="badge text-bg-warning mb-2">Séf ajánlata</span>
+                                <h4 class="card-title h5">GB Smash Burger</h4>
+                                <p class="card-text">Dupla smash marhahús, fűszeres lekvár, érett cheddar, jalapeño és GB titkos szósz.</p>
+                            </div>
+                            <div class="card-footer fw-bold">3 990 Ft</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="h4 mb-3">Üdítők</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100 etel-kartya">
+                            <div class="card-body">
+                                <h4 class="card-title h5">Coca-Cola Classic</h4>
+                                <p class="card-text">330 ml-es dobozos üdítő a klasszikus ízek kedvelőinek.</p>
+                            </div>
+                            <div class="card-footer fw-bold">890 Ft</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 etel-kartya">
+                            <div class="card-body">
+                                <h4 class="card-title h5">Coca-Cola Zero</h4>
+                                <p class="card-text">330 ml-es cukormentes dobozos üdítő.</p>
+                            </div>
+                            <div class="card-footer fw-bold">890 Ft</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 etel-kartya">
+                            <div class="card-body">
+                                <h4 class="card-title h5">Házi citromos limonádé</h4>
+                                <p class="card-text">500 ml, frissen facsart citromból, mentával.</p>
+                            </div>
+                            <div class="card-footer fw-bold">1 190 Ft</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nyitvatartás és elérhetőség -->
+        <section id="elerhetoseg" class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-3">Nyitvatartás</h2>
+                    <table class="table">
+                        <tbody>
+                            <tr><th scope="row">Hétfő</th><td>Zárva</td></tr>
+                            <tr><th scope="row">Kedd – Csütörtök</th><td>11:00 – 22:00</td></tr>
+                            <tr><th scope="row">Péntek – Szombat</th><td>11:00 – 23:00</td></tr>
+                            <tr><th scope="row">Vasárnap</th><td>11:00 – 21:00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-3">Elérhetőség</h2>
+                    <ul class="list-unstyled fs-5">
+                        <li class="mb-2"><strong>Cím:</strong> 1234 Budapest, Burger utca 1.</li>
+                        <li class="mb-2"><strong>Telefon:</strong> +36 1 234 5678</li>
+                        <li class="mb-2"><strong>Email:</strong> info@gbburger.hu</li>
+                    </ul>
+                    <a href="index.html" class="btn btn-dark mt-2">Asztalfoglalás</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white-50 text-center py-3">
+        &copy; 2026 GB Burger – iskolai projekt
+    </footer>
+
+    <button type="button" id="felGomb" class="btn btn-primary" aria-label="Vissza a tetejére">↑</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
