@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nev": "Ablak melletti 1",
+    "ferohely": 2,
+    "elhelyezkedes": "ablak mellett",
+    "dijPerFo": 1500
+  },
+  {
+    "id": 2,
+    "nev": "Ablak melletti 2",
+    "ferohely": 2,
+    "elhelyezkedes": "ablak mellett",
+    "dijPerFo": 1500
+  },
+  {
+    "id": 3,
+    "nev": "Belső 1",
+    "ferohely": 4,
+    "elhelyezkedes": "belső",
+    "dijPerFo": 1000
+  },
+  {
+    "id": 4,
+    "nev": "Belső 2",
+    "ferohely": 4,
+    "elhelyezkedes": "belső",
+    "dijPerFo": 1000
+  },
+  {
+    "id": 5,
+    "nev": "Terasz 1",
+    "ferohely": 4,
+    "elhelyezkedes": "terasz",
+    "dijPerFo": 1200
+  },
+  {
+    "id": 6,
+    "nev": "Terasz 2",
+    "ferohely": 6,
+    "elhelyezkedes": "terasz",
+    "dijPerFo": 1200
+  },
+  {
+    "id": 7,
+    "nev": "Külön terem (Nagy)",
+    "ferohely": 10,
+    "elhelyezkedes": "külön terem",
+    "dijPerFo": 2000
+  },
+  {
+    "id": 8,
+    "nev": "Külön terem (Kicsi)",
+    "ferohely": 8,
+    "elhelyezkedes": "külön terem",
+    "dijPerFo": 1800
+  }
+]
