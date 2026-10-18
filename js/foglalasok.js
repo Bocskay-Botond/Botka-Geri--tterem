@@ -5,6 +5,7 @@ let nezet = "tablazat";
 let novekvo = true;
 
 const kiiras = document.getElementById("kiiras");
+const uzenet = document.getElementById("uzenet");
 const kereses = document.getElementById("kereses");
 const szuresDatum = document.getElementById("szuresDatum");
 const rendezesMezo = document.getElementById("rendezesMezo");
@@ -71,6 +72,7 @@ function tablazatKiiras(lista) {
                 <th>Vendég</th>
                 <th>Asztal</th>
                 <th>Végösszeg</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>`;
@@ -85,6 +87,7 @@ function tablazatKiiras(lista) {
             <td>${f.vendegszam} fő</td>
             <td>${f.asztalId}. asztal</td>
             <td>${penz(f.vegosszeg)}</td>
+            <td><button class="btn btn-sm btn-outline-danger" onclick="torles(${f.id})">Törlés</button></td>
         </tr>`;
     }
 
@@ -109,6 +112,7 @@ function kartyaKiiras(lista) {
                 </div>
                 <div class="card-footer d-flex justify-content-between align-items-center">
                     <b>${penz(f.vegosszeg)}</b>
+                    <button class="btn btn-sm btn-outline-danger" onclick="torles(${f.id})">Törlés</button>
                 </div>
             </div>
         </div>`;
@@ -142,6 +146,22 @@ rendezesMezo.addEventListener("change", function () {
     novekvo = true;
     rendezesGomb.textContent = "Rendezés ↑";
 });
+
+
+// nem toroljuk ki csak torolt = true lesz
+function torles(id) {
+    let f = foglalasok.find(x => x.id == id);
+
+    if (!confirm("Biztos törlöd " + f.nev + " foglalását?")) return;
+
+    f.torolt = true;
+    megjelenites();
+
+    uzenet.innerHTML = `<div class="alert alert-success alert-dismissible fade show">
+        ${f.nev} foglalása törölve.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>`;
+}
 
 
 function nezetValtas(uj) {
