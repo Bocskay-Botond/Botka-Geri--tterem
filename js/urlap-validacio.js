@@ -100,3 +100,92 @@ function validalas(m) {
 
     return hibak;
 }
+
+
+function uzenetKiiras(urlap, html) {
+    let doboz = document.getElementById("urlapUzenet");
+    if (doboz == null) {
+        doboz = document.createElement("div");
+        doboz.id = "urlapUzenet";
+        urlap.parentElement.insertBefore(doboz, urlap);
+    }
+    doboz.innerHTML = html;
+    doboz.scrollIntoView({ behavior: "smooth" });
+}
+
+
+const urlap = document.getElementById("foglalasUrlap");
+
+if (urlap != null) {
+    const mezok = {
+        nev: document.getElementById("nev"),
+        email: document.getElementById("email"),
+        telefon: document.getElementById("telefon"),
+        datum: document.getElementById("datum"),
+        idopont: document.getElementById("idopont"),
+        vendegszam: document.getElementById("vendegszam"),
+        asztal: document.getElementById("asztal")
+    };
+    const osszeg = document.getElementById("osszeg");
+
+    mezok.datum.min = maiDatum();
+    urlap.setAttribute("novalidate", "");
+
+    for (let kulcs in mezok) {
+        mezok[kulcs].addEventListener("input", function () {
+            mezok[kulcs].classList.remove("is-invalid");
+        });
+    }
+
+    urlap.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        for (let kulcs in mezok) {
+            mezok[kulcs].classList.remove("is-invalid");
+        }
+
+        let hibak = validalas(mezok);
+
+        if (hibak.length > 0) {
+            let lista = "";
+            for (let h of hibak) {
+                lista += "<li>" + h + "</li>";
+            }
+            uzenetKiiras(urlap, `<div class="alert alert-danger">
+                <b>Hibás adatok:</b>
+                <ul class="mb-0">${lista}</ul>
+            </div>`);
+            return;
+        }
+
+        let maxId = 0;
+        for (let f of urlapFoglalasok) {
+            if (f.id > maxId) maxId = f.id;
+        }
+
+        let uj = {
+            id: maxId + 1,
+            nev: mezok.nev.value.trim(),
+            email: mezok.email.value.trim(),
+            telefon: mezok.telefon.value.trim(),
+            datum: mezok.datum.value,
+            idopont: mezok.idopont.value,
+            vendegszam: Number(mezok.vendegszam.value),
+            asztalId: Number(mezok.asztal.value),
+            vegosszeg: osszegKiolvasas(osszeg),
+            torolt: false
+        };
+
+        urlapFoglalasok.push(uj);
+        // console.log(urlapFoglalasok);
+
+        uzenetKiiras(urlap, `<div class="alert alert-success">
+            <h5>Sikeres foglalás!</h5>
+            ${uj.nev}, ${uj.datum} ${uj.idopont}, ${uj.vendegszam} fő, ${uj.asztalId}. asztal<br>
+            Végösszeg: ${uj.vegosszeg.toLocaleString("hu-HU")} Ft
+        </div>`);
+
+        urlap.reset();
+        mezok.datum.min = maiDatum();
+    });
+}
