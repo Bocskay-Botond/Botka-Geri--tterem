@@ -1,8 +1,11 @@
 // foglalasok oldal
 
 let foglalasok = [];
+let nezet = "tablazat";
 
 const kiiras = document.getElementById("kiiras");
+const tablazatGomb = document.getElementById("tablazatGomb");
+const kartyaGomb = document.getElementById("kartyaGomb");
 
 
 async function betoltes() {
@@ -36,7 +39,8 @@ function penz(szam) {
 function megjelenites() {
     let lista = szurtLista();
 
-    tablazatKiiras(lista);
+    if (nezet == "tablazat") tablazatKiiras(lista);
+    else kartyaKiiras(lista);
 }
 
 
@@ -74,5 +78,47 @@ function tablazatKiiras(lista) {
     kiiras.innerHTML = html;
 }
 
+
+function kartyaKiiras(lista) {
+    let html = `<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">`;
+
+    for (let f of lista) {
+        html += `<div class="col">
+            <div class="card h-100 shadow-sm foglalas-kartya">
+                <div class="card-body">
+                    <h5 class="card-title">${f.nev}</h5>
+                    <h6 class="card-subtitle mb-3 text-body-secondary">${f.datum}, ${f.idopont}</h6>
+                    <p class="mb-1"><b>Vendégek:</b> ${f.vendegszam} fő</p>
+                    <p class="mb-1"><b>Asztal:</b> ${f.asztalId}. asztal</p>
+                    <p class="mb-1"><b>Email:</b> ${f.email}</p>
+                    <p class="mb-0"><b>Telefon:</b> ${f.telefon}</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <b>${penz(f.vegosszeg)}</b>
+                </div>
+            </div>
+        </div>`;
+    }
+
+    html += "</div>";
+    kiiras.innerHTML = html;
+}
+
+
+function nezetValtas(uj) {
+    nezet = uj;
+    if (nezet == "tablazat") {
+        tablazatGomb.classList.add("active");
+        kartyaGomb.classList.remove("active");
+    } else {
+        kartyaGomb.classList.add("active");
+        tablazatGomb.classList.remove("active");
+    }
+    megjelenites();
+}
+
+
+tablazatGomb.addEventListener("click", () => nezetValtas("tablazat"));
+kartyaGomb.addEventListener("click", () => nezetValtas("kartya"));
 
 betoltes();

@@ -2,3 +2,12 @@ body {
     font-family: "Montserrat", sans-serif;
     background-color: #f8f9fa;
 }
+
+.foglalas-kartya {
+    transition: 0.2s;
+}
+
+.foglalas-kartya:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
