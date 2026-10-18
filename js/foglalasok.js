@@ -4,6 +4,7 @@ let foglalasok = [];
 let nezet = "tablazat";
 
 const kiiras = document.getElementById("kiiras");
+const kereses = document.getElementById("kereses");
 const tablazatGomb = document.getElementById("tablazatGomb");
 const kartyaGomb = document.getElementById("kartyaGomb");
 
@@ -21,10 +22,12 @@ async function betoltes() {
 
 
 function szurtLista() {
+    let keresett = kereses.value.toLowerCase();
     let lista = [];
 
     for (let f of foglalasok) {
         if (f.torolt) continue;
+        if (keresett != "" && !f.nev.toLowerCase().includes(keresett)) continue;
         lista.push(f);
     }
     return lista;
@@ -38,6 +41,11 @@ function penz(szam) {
 
 function megjelenites() {
     let lista = szurtLista();
+
+    if (lista.length == 0) {
+        kiiras.innerHTML = `<div class="alert alert-info">Nincs találat.</div>`;
+        return;
+    }
 
     if (nezet == "tablazat") tablazatKiiras(lista);
     else kartyaKiiras(lista);
@@ -118,6 +126,7 @@ function nezetValtas(uj) {
 }
 
 
+kereses.addEventListener("input", megjelenites);
 tablazatGomb.addEventListener("click", () => nezetValtas("tablazat"));
 kartyaGomb.addEventListener("click", () => nezetValtas("kartya"));
 
