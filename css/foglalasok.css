@@ -11,3 +11,11 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
 }
+
+/* fel gomb */
+#felGomb {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+}
