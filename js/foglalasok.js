@@ -2,10 +2,13 @@
 
 let foglalasok = [];
 let nezet = "tablazat";
+let novekvo = true;
 
 const kiiras = document.getElementById("kiiras");
 const kereses = document.getElementById("kereses");
 const szuresDatum = document.getElementById("szuresDatum");
+const rendezesMezo = document.getElementById("rendezesMezo");
+const rendezesGomb = document.getElementById("rendezesGomb");
 const tablazatGomb = document.getElementById("tablazatGomb");
 const kartyaGomb = document.getElementById("kartyaGomb");
 
@@ -116,6 +119,31 @@ function kartyaKiiras(lista) {
 }
 
 
+function rendezes() {
+    let mezo = rendezesMezo.value;
+
+    foglalasok.sort(function (a, b) {
+        let e;
+        if (mezo == "vendegszam" || mezo == "vegosszeg") {
+            e = a[mezo] - b[mezo];
+        } else {
+            e = a[mezo].localeCompare(b[mezo], "hu");
+        }
+        return novekvo ? e : -e;
+    });
+
+    novekvo = !novekvo;
+    rendezesGomb.textContent = novekvo ? "Rendezés ↑" : "Rendezés ↓";
+
+    megjelenites();
+}
+
+rendezesMezo.addEventListener("change", function () {
+    novekvo = true;
+    rendezesGomb.textContent = "Rendezés ↑";
+});
+
+
 function nezetValtas(uj) {
     nezet = uj;
     if (nezet == "tablazat") {
@@ -131,6 +159,7 @@ function nezetValtas(uj) {
 
 kereses.addEventListener("input", megjelenites);
 szuresDatum.addEventListener("input", megjelenites);
+rendezesGomb.addEventListener("click", rendezes);
 tablazatGomb.addEventListener("click", () => nezetValtas("tablazat"));
 kartyaGomb.addEventListener("click", () => nezetValtas("kartya"));
 

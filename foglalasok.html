@@ -49,6 +49,19 @@
                 <input type="date" id="szuresDatum" class="form-control">
             </div>
 
+            <div class="col-md-4">
+                <label for="rendezesMezo" class="form-label">Rendezés</label>
+                <div class="input-group">
+                    <select id="rendezesMezo" class="form-select">
+                        <option value="nev">Név</option>
+                        <option value="datum">Dátum</option>
+                        <option value="vendegszam">Vendégszám</option>
+                        <option value="vegosszeg">Végösszeg</option>
+                    </select>
+                    <button type="button" id="rendezesGomb" class="btn btn-primary">Rendezés ↑</button>
+                </div>
+            </div>
+
             <div class="col-md-2">
                 <div class="btn-group w-100" role="group" aria-label="Nézetváltó">
                     <button type="button" id="tablazatGomb" class="btn btn-outline-secondary active">Táblázat</button>
