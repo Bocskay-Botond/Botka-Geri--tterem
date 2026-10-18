@@ -5,6 +5,7 @@ let nezet = "tablazat";
 
 const kiiras = document.getElementById("kiiras");
 const kereses = document.getElementById("kereses");
+const szuresDatum = document.getElementById("szuresDatum");
 const tablazatGomb = document.getElementById("tablazatGomb");
 const kartyaGomb = document.getElementById("kartyaGomb");
 
@@ -23,11 +24,13 @@ async function betoltes() {
 
 function szurtLista() {
     let keresett = kereses.value.toLowerCase();
+    let datum = szuresDatum.value;
     let lista = [];
 
     for (let f of foglalasok) {
         if (f.torolt) continue;
         if (keresett != "" && !f.nev.toLowerCase().includes(keresett)) continue;
+        if (datum != "" && f.datum != datum) continue;
         lista.push(f);
     }
     return lista;
@@ -127,6 +130,7 @@ function nezetValtas(uj) {
 
 
 kereses.addEventListener("input", megjelenites);
+szuresDatum.addEventListener("input", megjelenites);
 tablazatGomb.addEventListener("click", () => nezetValtas("tablazat"));
 kartyaGomb.addEventListener("click", () => nezetValtas("kartya"));
 
