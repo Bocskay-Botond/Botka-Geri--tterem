@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/foglalasok.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
+    <script defer src="./js/kozos.js"></script>
+    <title>GB Burger - Asztalfoglalás</title>
+</head>
+<body>
+    <section id="fooldal"></section>
+    
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">GB Burger</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Menü">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="urlap.html">Foglalási űrlap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rolunk.html">Rólunk</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="foglalasok.html">Foglalások</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow border-0">
+                        <div class="card-header bg-dark text-white p-4 text-center">
+                            <h1 class="h3 mb-0">Asztalfoglalás</h1>
+                            <p class="text-white-50 mb-0 mt-1">Foglaljon asztalt egyszerűen és gyorsan!</p>
+                        </div>
+                        <div class="card-body p-4">
+                            
+                            <div id="alertBox" class="d-none"></div>
+
+                            <form id="foglalasForm" novalidate>
+                                
+                                <div class="mb-3">
+                                    <label for="nev" class="form-label fw-bold">Teljes név *</label>
+                                    <input type="text" class="form-control" id="nev" placeholder="pl. Minta János">
+                                    <div class="invalid-feedback">Kérjük, adja meg a nevét!</div>
+                                </div>
+
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label fw-bold">E-mail cím *</label>
+                                        <input type="email" class="form-control" id="email" placeholder="pl. janos@example.com">
+                                        <div class="invalid-feedback">Érvényes e-mail címet adjon meg! (pl. nev@domén.hu)</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="telefon" class="form-label fw-bold">Telefonszám *</label>
+                                        <input type="tel" class="form-control" id="telefon" placeholder="pl. +36301234567">
+                                        <div class="invalid-feedback">Érvényes telefonszámot adjon meg! (pl. +36301234567 vagy 06301234567)</div>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label for="datum" class="form-label fw-bold">Dátum *</label>
+                                        <input type="date" class="form-control" id="datum">
+                                        <div class="invalid-feedback">Múltbéli vagy érvénytelen dátum nem választható!</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="idopont" class="form-label fw-bold">Időpont *</label>
+                                        <select class="form-select" id="idopont">
+                                            <option value="" selected disabled>Válasszon időpontot...</option>
+                                            <option value="12:00">12:00</option>
+                                            <option value="13:00">13:00</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="17:00">17:00</option>
+                                            <option value="18:00">18:00</option>
+                                            <option value="19:00">19:00</option>
+                                            <option value="20:00">20:00</option>
+                                        </select>
+                                        <div class="invalid-feedback">Kérjük, válasszon időpontot!</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="asztal" class="form-label fw-bold">Asztal / Ülőhely kiválasztása *</label>
+                                    <select class="form-select" id="asztal">
+                                        <option value="" selected disabled>Válasszon dátumot és időpontot először...</option>
+                                    </select>
+                                    <div class="invalid-feedback" id="asztalFeedback">Kérjük, válasszon elérhető asztalt!</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="vendegszam" class="form-label fw-bold">Vendégek száma *</label>
+                                    <input type="number" class="form-control" id="vendegszam" min="1" max="10" value="1">
+                                    <div class="invalid-feedback">A vendégek száma 1 és 10 fő között lehet!</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="menuOpcio" class="form-label fw-bold">Menü opció / Alapfoglalás *</label>
+                                    <select class="form-select" id="menuOpcio">
+                                        <option value="2000">Alap foglalási díj / Asztalfoglalás (2 000 Ft / fő)</option>
+                                        <option value="5490">GB Classic Menü (5 490 Ft / fő)</option>
+                                        <option value="5890">GB Cheese & Bacon Menü (5 890 Ft / fő)</option>
+                                        <option value="5990">GB Smash Burger Menü (5 990 Ft / fő)</option>
+                                    </select>
+                                </div>
+
+                                <div class="p-3 my-4 bg-light rounded text-center border">
+                                    <span class="fs-5 fw-bold text-secondary">Várható fizetendő foglalási összeg:</span>
+                                    <div class="fs-2 fw-black text-success mt-1" id="osszegKijelzo">2 000 Ft</div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="megjegyzes" class="form-label fw-bold">Egyéb megjegyzés, kérés</label>
+                                    <textarea class="form-control" id="megjegyzes" rows="3" placeholder="Például: gyerekszék igénye, allergiák..."></textarea>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-warning btn-lg fw-bold">Foglalás véglegesítése</button>
+                                </div>
+                            </form>
+
+                            <div id="sikerKartya" class="d-none">
+                                <div class="alert alert-success border-0 shadow-sm p-4">
+                                    <div class="text-center mb-3">
+                                        <h3 class="alert-heading h4 font-bold mt-2">Sikeres foglalás!</h3>
+                                        <p class="mb-0 text-muted">Köszönjük a foglalást! Az alábbi részletekkel rögzítettük rendszerünkben:</p>
+                                    </div>
+                                    <hr>
+                                    <div id="foglalasReszletek" class="lh-lg"></div>
+                                    <div class="mt-4 text-center">
+                                        <button id="ujFoglalasGomb" class="btn btn-outline-success fw-bold">Új foglalás leadása</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
