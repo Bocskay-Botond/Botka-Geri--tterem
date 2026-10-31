@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const felGomb = document.getElementById('felGomb');
+    if (felGomb) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                felGomb.classList.add('lathato');
+            } else {
+                felGomb.classList.remove('lathato');
+            }
+        });
+
+        felGomb.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     const form = document.getElementById('foglalasForm');
     if (!form) return;
     const nevInput = document.getElementById('nev');
