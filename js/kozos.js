@@ -30,22 +30,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const foglalasReszletek = document.getElementById('foglalasReszletek');
     const ujFoglalasGomb = document.getElementById('ujFoglalasGomb');
 
-    const asztalok = [
-        { id: 1, nev: '1. Asztal (2 fős, ablak mellett)' },
-        { id: 2, nev: '2. Asztal (2 fős, belső tér)' },
-        { id: 3, nev: '3. Asztal (4 fős, box)' },
-        { id: 4, nev: '4. Asztal (4 fős, terasz)' },
-        { id: 5, nev: '5. Asztal (6 fős, nagy családi)' },
-        { id: 6, nev: '6. Asztal (8 fős, VIP)' }
-    ];
+    let asztalok = [];
+    let jsonFoglalasok = [];
+    let meglevoFoglalasok = JSON.parse(localStorage.getItem('foglalasok')) || [];
 
-    let meglevoFoglalasok = JSON.parse(localStorage.getItem('foglalasok')) || [
-        { datum: '2026-10-25', idopont: '18:00', asztalId: 3 },
-        { datum: '2026-10-25', idopont: '19:00', asztalId: 1 }
-    ];
+    fetch('./data/asztalok.json')
+        .then(res => res.json())
+        .then(adat => {
+            asztalok = adat;
+            return fetch('./data/foglalasok.json');
+        })
+        .then(res => res.json())
+        .then(adat => {
+            jsonFoglalasok = adat.filter(f => !f.torolt);
+            frissitAsztalValasztek();
+        })
+        .catch(err => {
+            console.log(err);
+            showAlert('Nem sikerült betölteni az asztalokat!', 'danger');
+        });
 
+    function osszesFoglalas() {
+        return jsonFoglalasok.concat(meglevoFoglalasok);
+    }
 
-    const ma = new Date().toISOString().split('T')[0];
+    const most = new Date();
+    let honap = most.getMonth() + 1;
+    let nap = most.getDate();
+    if (honap < 10) honap = '0' + honap;
+    if (nap < 10) nap = '0' + nap;
+    const ma = most.getFullYear() + '-' + honap + '-' + nap;
     datumInput.setAttribute('min', ma);
 
     function szamoldOsszeg() {
@@ -62,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function frissitAsztalValasztek() {
         const valasztottDatum = datumInput.value;
         const valasztottIdopont = idopontSelect.value;
+        const vendegek = parseInt(vendegszamInput.value) || 0;
+        const elozoAsztal = asztalSelect.value;
 
         asztalSelect.innerHTML = '';
 
@@ -74,27 +90,35 @@ document.addEventListener('DOMContentLoaded', () => {
         asztalSelect.innerHTML = '<option value="" selected disabled>Válasszon asztalt...</option>';
 
         asztalok.forEach(asztal => {
-            const isFoglalt = meglevoFoglalasok.some(f => 
-                f.datum === valasztottDatum && 
-                f.idopont === valasztottIdopont && 
+            const isFoglalt = osszesFoglalas().some(f =>
+                f.datum === valasztottDatum &&
+                f.idopont === valasztottIdopont &&
                 parseInt(f.asztalId) === asztal.id
             );
+            const tulKicsi = asztal.ferohely < vendegek;
 
             const option = document.createElement('option');
             option.value = asztal.id;
+            const szoveg = `${asztal.nev} (${asztal.ferohely} fős, ${asztal.elhelyezkedes})`;
 
             if (isFoglalt) {
-                option.textContent = `${asztal.nev} - [FOGLALT]`;
+                option.textContent = `${szoveg} - [FOGLALT]`;
                 option.disabled = true; // Nem választható ki!
+            } else if (tulKicsi) {
+                option.textContent = `${szoveg} - [TÚL KICSI]`;
+                option.disabled = true;
             } else {
-                option.textContent = asztal.nev;
+                option.textContent = szoveg;
+                if (String(asztal.id) === elozoAsztal) {
+                    option.selected = true;
+                }
                 elerhetoCount++;
             }
             asztalSelect.appendChild(option);
         });
 
         if (elerhetoCount === 0) {
-            showAlert('A kiválasztott időpontban minden asztalunk foglalt! Kérjük, válasszon másik időpontot.', 'danger');
+            showAlert(`A kiválasztott időpontban nincs szabad asztal ${vendegek} főre! Kérjük, válasszon másik időpontot.`, 'danger');
         } else {
             rejtAlert();
         }
@@ -102,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     datumInput.addEventListener('change', frissitAsztalValasztek);
     idopontSelect.addEventListener('change', frissitAsztalValasztek);
+    vendegszamInput.addEventListener('input', frissitAsztalValasztek);
 
     function validalEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
