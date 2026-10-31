@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('foglalasForm');
+    if (!form) return;
     const nevInput = document.getElementById('nev');
     const emailInput = document.getElementById('email');
     const telefonInput = document.getElementById('telefon');
