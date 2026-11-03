@@ -5,17 +5,17 @@ body {
 
 .foglalas-kartya,
 .etel-kartya {
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .foglalas-kartya:hover,
 .etel-kartya:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .portfolio-hero {
-    background: linear-gradient(135deg, #212529, #3b2a1a);
+    background: linear-gradient(#212529, #3b2a1a);
     color: white;
     padding: 80px 0;
 }
@@ -29,13 +29,4 @@ body {
     position: fixed;
     right: 20px;
     bottom: 20px;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-}
-
-#felGomb.lathato {
-    opacity: 1;
-    visibility: visible;
 }

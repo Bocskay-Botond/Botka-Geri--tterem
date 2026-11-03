@@ -148,7 +148,7 @@ rendezesMezo.addEventListener("change", function () {
 });
 
 
-// nem toroljuk ki csak torolt = true lesz
+// nem torol ki csak torolt = true lesz
 function torles(id) {
     let f = foglalasok.find(x => x.id == id);
 
