@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
     const felGomb = document.getElementById('felGomb');
     if (felGomb) {
         window.addEventListener('scroll', () => {
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (isFoglalt) {
                 option.textContent = `${szoveg} - [FOGLALT]`;
-                option.disabled = true; // Nem választható ki!
+                option.disabled = true; 
             } else if (tulKicsi) {
                 option.textContent = `${szoveg} - [TÚL KICSI]`;
                 option.disabled = true;
